@@ -1,0 +1,94 @@
+[user]
+#	name = flespark
+#	email = 0860734llx@gmail.com
+[credential]
+	helper = store
+[color]
+	ui = auto
+[log]
+	decorate = auto
+#[pager]
+#    diff = delta
+#    log = delta
+#    reflog = delta
+#    show = delta
+#[interactive]
+#    diffFilter = delta --color-only --features=interactive
+#[delta]
+#    features = Github
+#    light = true
+#    side-by-side = true
+[merge]
+	ff = only
+	tool = vimdiff
+	conflictstyle = diff3
+	defaultToUpstream = true
+[mergetool]
+	prompt = false
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[push]
+	default = simple
+[alias]
+	a = add
+	aa = add -A
+	ac = add .
+	ad = add -u
+	af = am --reject --whitespace=fix
+	br = branch
+	bv = branch -vv
+    c = clone
+	cl = config -l
+	cm = commit
+	cma = commit --amend
+	cmm = commit -m
+	co = checkout
+	ch = checkout --
+	cp = cherry-pick
+	dc = diff --cached
+    dcn = diff --name-status --cached
+    d = difftool
+	df = diff
+	fp = format-patch
+	ft = fetch
+	gp = log --graph --date=short --format=\"%C(yellow)%h%C(reset) %C(magenta)%cd %C(auto)%d%C(reset) %s  %C(cyan)@%an%C(reset)\"
+	gr = log --decorate --graph --oneline --all
+	lg = log --graph --oneline --decorate --all
+	ls = log --decorate --name-status
+	mg = merge
+	mt = mergetool
+	pl = pull
+	ps = push
+	rh = reset HEAD
+	rs = reset --hard
+	rt = rev-parse --show-toplevel
+	rv = remote -v
+	rso = remote set-url origin
+	s = status -s
+	sh = show
+	sl = show HEAD
+	st = status
+	ss = stash
+	sl = stash list
+	sa = stash apply
+	us = reset HEAD --
+[init]
+	defaultBranch = main
+[core]
+    quotePath = false
+	editor = vim
+# convert line ending in windows but not linux
+	autocrlf = false
+	attributesfile = ~/.gitattributes
+	excludesfile = ~/.gitignore
+# [url "https://hub.fastgit.org/"]
+[url "https://hub.fgit.ml/"]
+	insteadOf = https://github.com/
+# [http]
+# 	proxy = http://127.0.0.1:8889
+# [https]
+# 	proxy = http://127.0.0.1:8889
+[protocol "http"]
+	allow = always

@@ -1,0 +1,11 @@
+build-essential
+git
+vim
+tmux
+python3
+python3-pip
+clangd
+shellcheck
+jq
+fzf
+ripgrep

@@ -1,0 +1,5 @@
+https://github.com/tmux-plugins/tpm.git	.tmux/plugins/tpm
+https://github.com/christoomey/vim-tmux-navigator.git	.vim/pack/combine/start/vim-tmux-navigator
+https://github.com/dense-analysis/ale.git	.vim/pack/extension/start/ale
+https://github.com/editorconfig/editorconfig-vim.git	.vim/pack/extension/start/editorconfig-vim
+https://github.com/christoomey/vim-tmux-navigator.git	.vim/pack/extension/start/vim-tmux-navigator

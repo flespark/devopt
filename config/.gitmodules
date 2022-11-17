@@ -1,0 +1,20 @@
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+	shallow = true
+[submodule ".vim/pack/combine/start/vim-tmux-navigator"]
+	path = .vim/pack/combine/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+	shallow = true
+[submodule ".vim/pack/extension/start/ale"]
+	path = .vim/pack/extension/start/ale
+	url = https://github.com/dense-analysis/ale.git
+	shallow = true
+[submodule ".vim/pack/extension/start/editorconfig-vim"]
+	path = .vim/pack/extension/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
+	shallow = true
+[submodule ".vim/pack/extension/start/vim-tmux-navigator"]
+	path = .vim/pack/extension/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+	shallow = true
