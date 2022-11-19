@@ -2,6 +2,7 @@
 
 export EDITOR=vim
 export PAGER=less
+export LESSCHARSET=utf-8
 
 # fzf config
 if type -P fzf &>/dev/null;then

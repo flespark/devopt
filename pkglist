@@ -9,3 +9,4 @@ shellcheck
 jq
 fzf
 ripgrep
+file

@@ -1,13 +1,18 @@
 # Devopt
----
-A docker based linux kernel developing toolkit，include neccessary pacakge,
-basic software configuration(vim, tmux, bash), and relative git repo dependency.
+
+A docker based linux kernel developing toolkit，include neccessary pacakges,
+basic software configuration(vim, tmux, bash), and relative git repo
+dependencies.
 
 ### Usage
 
-1. build it:
+1. build it locally:
 
-   `docker build -t devopt:v1 .`
+   `docker build -t devopt:stable .`
+
+   or pull from docker mirror:
+
+   `docker pull pull registry.cn-hangzhou.aliyuncs.com/flesaprk/devopt:stable`
 
 2. download kernel source in host:
 
@@ -15,5 +20,7 @@ basic software configuration(vim, tmux, bash), and relative git repo dependency.
 
 3. start docker with local kernel source mounted:
 
-   `docker run -v /lib/modules:/lib/modules -v /usr/src:/usr/src -it devopt:v1`
+   `docker run -v /lib/modules:/lib/modules -v /usr/src:/usr/src -v
+   /usr/lib:/usr/lib -it
+   devopt:stable`
 

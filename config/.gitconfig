@@ -55,6 +55,7 @@
 	ft = fetch
 	gp = log --graph --date=short --format=\"%C(yellow)%h%C(reset) %C(magenta)%cd %C(auto)%d%C(reset) %s  %C(cyan)@%an%C(reset)\"
 	gr = log --decorate --graph --oneline --all
+	la = log -p ./
 	lg = log --graph --oneline --decorate --all
 	ls = log --decorate --name-status
 	mg = merge
@@ -77,7 +78,7 @@
 [init]
 	defaultBranch = main
 [core]
-    quotePath = false
+    quotepath = false
 	editor = vim
 # convert line ending in windows but not linux
 	autocrlf = false
