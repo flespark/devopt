@@ -12,7 +12,7 @@ dependencies.
 
    or pull from docker mirror:
 
-   `docker pull pull registry.cn-hangzhou.aliyuncs.com/flesaprk/devopt:stable`
+   `docker pull pull registry.cn-hangzhou.aliyuncs.com/flespark/devopt:stable`
 
 2. download kernel source in host:
 
