@@ -21,6 +21,6 @@ dependencies.
 3. start docker with local kernel source mounted:
 
    `docker run -v /lib/modules:/lib/modules -v /usr/src:/usr/src -v
-   /usr/lib:/usr/lib -it
+   /usr/lib/modules:/usr/lib/modules -it
    devopt:stable`
 
