@@ -71,15 +71,23 @@ nmap <Leader>hr :%!xxd<CR> :set filetype=xxd<CR>
 nmap <Leader>hw :%!xxd -r<CR> :set binary<CR> :set filetype=<CR>
 nnoremap <silent> <leader>p :set paste!<cr>
 nnoremap <esc><esc> :nohlsearch<return><esc>
-nnoremap <silent> <leader>l <esc>:set norelativenumber! nonumber!<cr>
-function! Tscl()
+
+function Mouse_select_toggle()
     if &signcolumn == "auto" || &signcolumn == "yes"
         set signcolumn=no
     else
         set signcolumn=auto
     endif
+    if &number || &relativenumber
+        set nonumber
+        set norelativenumber
+    else
+        set number
+        set relativenumber
+    endif
 endfunction
-nnoremap <leader>c :call Tscl()<cr>
+nnoremap <leader>t :call Mouse_select_toggle()<cr>
+
 " clean trailing whitspace
 nnoremap <silent> <F12> :let _s=@/ <bar> :%s/\s\+$//e <bar> :let @/=_s <bar> :nohl <bar> :unlet _s <cr>
 inoremap jj <esc>
@@ -116,7 +124,8 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
-\	'c': ['clangd'],
+\   'c': ['clangd'],
+\   'cpp': ['clangd'],
 \}
 
 let g:ale_linters_explicit = 1
@@ -129,7 +138,9 @@ let g:ale_lint_delay = 500
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let g:ale_set_highlights = 0
 let g:ale_lint_on_insert_leave = 1
+# TODO: add clangd toml config
 let g:ale_c_clangd_options = '--query-driver=/usr/bin/*gcc --clang-tidy --completion-style=bundled --suggest-missing-includes'
+let g:ale_cpp_clangd_options = '--query-driver=/usr/bin/*g++ --clang-tidy --completion-style=bundled --suggest-missing-includes'
 let g:ale_c_parse_makefile = 1
 let g:airline#extensions#ale#enabled = 1
 " navigate between errors quickly
