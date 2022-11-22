@@ -18,3 +18,5 @@ ripgrep
 shellcheck
 tmux
 vim
+linux-image-5.19.0-0.deb11.2-amd64
+linux-headers-5.19.0-0.deb11.2-amd64

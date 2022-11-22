@@ -8,19 +8,13 @@ dependencies.
 
 1. build it locally:
 
-   `docker build -t devopt:stable .`
+   `docker build -t devopt:stable https://github.com/flespark/devopt.git`
 
    or pull from docker mirror:
 
    `docker pull pull registry.cn-hangzhou.aliyuncs.com/flespark/devopt:stable`
 
-2. download kernel source in host:
+2. start docker with local kernel source mounted:
 
-   `sudo apt install -y kernel-headers-$(uname -r)-$(uname -m) kernel-image-$(uname -r)-$(uname -m)`
-
-3. start docker with local kernel source mounted:
-
-   `docker run -v /lib/modules:/lib/modules -v /usr/src:/usr/src -v
-   /usr/lib/modules:/usr/lib/modules -it
-   devopt:stable`
+   `docker run -it devopt:stable /bin/bash`
 
