@@ -8,7 +8,7 @@ dependencies.
 
 1. build it locally:
 
-   `docker build -t devopt:stable https://github.com/flespark/devopt.git`
+   `docker build -t devopt:stable .`
 
    or pull from docker mirror:
 

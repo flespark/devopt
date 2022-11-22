@@ -138,7 +138,7 @@ let g:ale_lint_delay = 500
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let g:ale_set_highlights = 0
 let g:ale_lint_on_insert_leave = 1
-# TODO: add clangd toml config
+" TODO: add clangd toml config
 let g:ale_c_clangd_options = '--query-driver=/usr/bin/*gcc --clang-tidy --completion-style=bundled --suggest-missing-includes'
 let g:ale_cpp_clangd_options = '--query-driver=/usr/bin/*g++ --clang-tidy --completion-style=bundled --suggest-missing-includes'
 let g:ale_c_parse_makefile = 1
