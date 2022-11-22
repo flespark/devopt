@@ -98,7 +98,7 @@ autocmd BufNewFile,BufReadPost * if &filetype == "yaml" | set expandtab shiftwid
 " fzf-vim shortkey
 nnoremap <silent> <Leader>b :Buffers<CR>
 nnoremap <silent> <C-f> :Files<CR>
-nnoremap <silent> <Leader>f :Rg<CR>
+nnoremap <silent> <C-g> :Rg<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>
 
 " NERDTree shortkey
@@ -143,10 +143,12 @@ let g:ale_c_clangd_options = '--query-driver=/usr/bin/*gcc --clang-tidy --comple
 let g:ale_cpp_clangd_options = '--query-driver=/usr/bin/*g++ --clang-tidy --completion-style=bundled --suggest-missing-includes'
 let g:ale_c_parse_makefile = 1
 let g:airline#extensions#ale#enabled = 1
-" navigate between errors quickly
-nnoremap <Leader>j <Plug>(ale_previous_wrap)
-nnoremap <Leader>k <Plug>(ale_next_wrap)
+" navigate between errors quickly, idk why noremap doesn't work
+nmap <Leader>j <Plug>(ale_next_wrap)
+nmap <Leader>k <Plug>(ale_previous_wrap)
 nnoremap <Leader>d :ALEGoToDefinition<cr>
+" autofix shortkey
+nnoremap <Leader>f :ALECodeAction<cr>
 nnoremap <Leader>r :ALEFindReferences<cr>
 nnoremap <Leader>s :ALESymbolSearch<space>
 nnoremap <Leader><Leader> :ALEHover<cr>
