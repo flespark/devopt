@@ -72,6 +72,15 @@ nmap <Leader>hw :%!xxd -r<CR> :set binary<CR> :set filetype=<CR>
 nnoremap <silent> <leader>p :set paste!<cr>
 nnoremap <esc><esc> :nohlsearch<return><esc>
 
+function Line_wrap_toggle()
+    if &wrap
+        setlocal nowrap
+    else
+        setlocal wrap
+    endif
+endfunction
+nnoremap <leader>w :call Line_wrap_toggle()<cr>
+
 function Mouse_select_toggle()
     if &signcolumn == "auto" || &signcolumn == "yes"
         set signcolumn=no
