@@ -15,7 +15,9 @@ libncerses-dev
 libssl-dev
 python3
 python3-pip
+ranger
 ripgrep
+screen
 shellcheck
 tmux
 vim

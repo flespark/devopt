@@ -6,7 +6,7 @@ ARG TZ=Asia/Shanghai
 
 ENV TZ ${TZ}
 ENV LC_ALL=C
-ENV TERM=screen
+ENV TERM=xterm
 ENV XDG_CONFIG_HOME=/root
 
 ADD config/ ${XDG_CONFIG_HOME}/

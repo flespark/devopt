@@ -110,13 +110,12 @@ nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <C-g> :Rg<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>
 
-" NERDTree shortkey
-nnoremap <C-e> :NERDTreeToggle<CR>
-nnoremap <M-h> :tabn<CR>
-nnoremap <M-h> :tabp<CR>
-nnoremap <M-j> :tablast<CR>
-nnoremap <M-k> :tabfirst<CR>
-nnoremap <M-x> :tabclose<CR>
+" ranger.vim
+let g:ranger_map_keys = 0 " disable the default key mapping
+let g:NERDTreeHijackNetrw = 0 " add this line if you use NERDTree
+let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
+" open selected file in new tab
+nnoremap <Leader>e :RangerNewTab<cr>
 
 " air-line
 let g:airline#extensions#ale#enabled = 1
