@@ -2,6 +2,7 @@ bc
 bison
 build-essential
 clangd
+cmake
 cpio
 file
 flex
