@@ -12,9 +12,6 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-      - name: Build docker
-        run: |
-          docker build -t devopt:latest .
       - name: Login to Aliyun Container Registry
         uses: docker/login-action@v2
         with:
