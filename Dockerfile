@@ -9,7 +9,7 @@ ENV TERM=xterm
 ADD config/ ${GITHUB_WORKSPACE:-/root/}
 ADD pkglist /tmp/
 ADD repolist /tmp/
-ADD sources.list /etc/apt/
+ADD aliyun.list /etc/apt/sources.list/
 
 WORKDIR ${GITHUB_WORKSPACE:-/root}
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
