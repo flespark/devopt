@@ -18,4 +18,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 	while read pkg; do apt-get install -y "${pkg}"; done < /tmp/pkglist && \
 	while read repo_url local_path; do git clone --single-branch --depth=1 "${repo_url}" "${local_path}"; done < /tmp/repolist
 
+# FIXME: ranger preview not work when running as root
+RUN sed -i "/if fm.username == 'root':/,+3 d" /usr/lib/python3/dist-packages/ranger/core/main.py
+
 # RUN xdg-user-dirs-update
