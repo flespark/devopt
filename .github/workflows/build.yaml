@@ -2,7 +2,7 @@ name: Docker build
 
 on:
   push:
-    branches: ["kernel"]
+    branches: ["action-test"]
 
   workflow_dispatch:
 
