@@ -36,15 +36,15 @@ set foldcolumn=0
 set foldlevel=99
 
 set undofile
-set undodir=~/.vim/undo
-set viminfo=%,<100,'10,/50,:100,h,f0,n~/.vim/.viminfo
+set undodir=$XDG_CACHE_HOME/vim/undo,~/,/tmp
+set viminfo=%,<100,'10,/50,:100,h,f0,n$XDG_CACHE_HOME/vim/viminfo
 " manually save/load view
 " set viewoptions=folds,cursor,curdir
 " manually save/load session
 " set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize,terminal
-set directory=~/.vim/swap
+set directory=$XDG_CACHE_HOME/vim/swap,~/,/tmp
 set backup
-set backupdir=~/.vim/backup
+set backupdir=$XDG_CACHE_HOME/vim/backup,~/,/tmp
 
 " get off arrow key
 noremap <up> <nop>
@@ -110,7 +110,7 @@ nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <C-g> :Rg<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>
 
-" ranger.vim
+" ranger
 let g:ranger_map_keys = 0 " disable the default key mapping
 let g:NERDTreeHijackNetrw = 0 " add this line if you use NERDTree
 let g:ranger_replace_netrw = 1 " open ranger when vim open a directory

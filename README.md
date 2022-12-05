@@ -16,5 +16,5 @@ dependencies.
 
 2. start docker with local kernel source mounted:
 
-   `docker run -it devopt:stable /bin/bash`
+   `docker run -it devopt:stable -v <project_path>:/wks`
 

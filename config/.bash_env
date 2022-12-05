@@ -4,6 +4,11 @@ export EDITOR=vim
 export PAGER=less
 export LESSCHARSET=utf-8
 
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-/root}
+export XDG_DATA_HOME=/wks/.local/share
+export XDG_CACHE_HOME=/wks/.cache
+export XDG_STAT_HOME=/wks/.local/stat
+
 # fzf config
 if type -P fzf &>/dev/null;then
 
