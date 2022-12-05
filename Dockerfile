@@ -17,8 +17,7 @@ RUN ulimit -c unlimited
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 	while read pkg; do apt-get install -y "${pkg}"; done < /tmp/pkglist && \
 	while read repo_url local_path; do git clone --single-branch --depth=1 "${repo_url}" "${local_path}"; done < /tmp/repolist
-RUN mkdir -p /wks/{.config,.cache,.local} && mkdir -p /wks/.local/{share,stat} && \
-	mkdir /wks/.cache/vim/{swap,backup,viminfo,undo}
+RUN mkdir -p /wks/{.config,.cache,.local} /wks/.local/{share,stat} /wks/.cache/vim/{swap,backup,viminfo,undo}
 
 # FIXME: ranger preview not work when running as root
 RUN sed -i "/if fm.username == 'root':/,+3 d" /usr/lib/python3/dist-packages/ranger/core/main.py
