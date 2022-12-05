@@ -5,13 +5,13 @@ ARG TZ=Asia/Shanghai
 ENV TZ=${TZ}
 ENV LC_ALL=C
 ENV TERM=xterm
+ENV XDG_CONFIG_HOME=/root/.config
 
-ADD config/ ${GITHUB_WORKSPACE:-/root/}
+ADD config/ $XDG_CONFIG_HOME/
 ADD pkglist /tmp/
 ADD repolist /tmp/
 ADD aliyun.list /etc/apt/sources.list.d/
 
-WORKDIR ${GITHUB_WORKSPACE:-/root}
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN ulimit -c unlimited
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
