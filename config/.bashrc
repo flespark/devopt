@@ -1,9 +1,10 @@
 
-# correct the spell error in cd command
+# correct the spell mistake
 shopt -s cdspell
+# ignore Ctrl-C
 set -o ignoreeof
-stty -ixon
-export IGNOREEOF=3
+# igonre Crel-C time
+# export IGNOREEOF=5
 
 PS1='\[\033[0;31m\]\A \[\033[32m\]\W \[\033[36m\]>\[\033[00m\]'
 
@@ -15,8 +16,8 @@ if [ -f ~/.bash_env ]; then
 	. ~/.bash_env
 fi
 
-if [ -f ~/.bash_command ]; then
-	. ~/.bash_command
+if [ -f ~/.bash_cmd ]; then
+	. ~/.bash_cmd
 fi
 
 if [ -f ~/.bash_comp/main.sh ]; then
