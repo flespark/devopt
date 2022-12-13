@@ -12,9 +12,9 @@ dependencies.
 
    or pull from docker mirror:
 
-   `docker pull pull registry.cn-hangzhou.aliyuncs.com/flespark/devopt:stable`
+   `docker pull registry.cn-hangzhou.aliyuncs.com/flespark/devopt:stable`
 
 2. start docker with local kernel source mounted:
 
-   `docker run -it devopt:stable -v <project_path>:/wks`
+   `docker run --privileged -v <project_path>:/wks -it devopt:stable`
 
