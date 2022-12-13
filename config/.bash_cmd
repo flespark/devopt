@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# copy editorconfig to worksapce
+[ -f /wks/.editorconfig ] || cp /root/.editorconfig /wks/
+
 # create directory for vim
 set -B
 mkdir -p /wks/.config /wks/.local/{share,stat} /wks/.cache/vim/{swap,backup,undo} /wks/.crash
