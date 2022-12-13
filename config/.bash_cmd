@@ -2,7 +2,7 @@
 
 # create directory for vim
 set -B
-mkdir -p /wks/.config /wks/.local/{share,stat} /wks/.cache/vim/{swap,backup,viminfo,undo} /wks/.crash
+mkdir -p /wks/.config /wks/.local/{share,stat} /wks/.cache/vim/{swap,backup,undo} /wks/.crash
 
 # coredump setting
 ulimit -c unlimited && mkdir -p /var/crash && \
