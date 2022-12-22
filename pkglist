@@ -11,6 +11,7 @@ gdb
 git
 jq
 libelf-dev
+libear
 libncerses-dev
 libssl-dev
 python3
