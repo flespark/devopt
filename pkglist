@@ -3,7 +3,9 @@ bison
 build-essential
 clangd
 cmake
+curl
 cpio
+fd-find
 file
 flex
 fzf
@@ -14,6 +16,7 @@ libelf-dev
 libear
 libncerses-dev
 libssl-dev
+minicom
 python3
 python3-pip
 ranger
@@ -24,3 +27,4 @@ tmux
 vim
 linux-image-5.19.0-0.deb11.2-amd64
 linux-headers-5.19.0-0.deb11.2-amd64
+zsh

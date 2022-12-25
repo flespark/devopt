@@ -1,0 +1,10 @@
+# create directory for vim
+set -B
+mkdir -p /wks/.config /wks/.local/{share,stat} /wks/.cache/zsh /wks/.cache/vim/{swap,backup,undo}
+
+# coredump setting
+ulimit -c unlimited && mkdir -p /var/crash && \
+	echo "/var/crash/%e-%p-%t.coredump" > /proc/sys/kernel/core_pattern
+
+# ranger enable preview when running as root
+sed -i "/if fm.username == 'root':/,+3 d" /usr/lib/python3/dist-packages/ranger/core/main.py

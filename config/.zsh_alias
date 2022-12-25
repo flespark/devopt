@@ -1,22 +1,23 @@
 # file system
-alias sl='ls'
-alias ll='ls -alF'
-alias lf='ls -d'
-alias lt='ls -hlt'
-alias la='ls -A'
-alias l='ll -h'
-alias md='mkdir -p'
-alias df='df -h'
-alias rf='readlink -f'
-# kill all mosh server except last one
-alias kms='kill $(ps --no-headers --sort=start_time -C mosh-server -o pid | head -n -1)'
-alias odd='od -A x -t xz -N 256 -v'
+alias ls='ls --color=auto'
+alias ll='ls -lah --color=auto'
+alias lf='ls -lahd --color=auto'
 
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+alias md='mkdir -p'
+alias rf='readlink -f'
+
+# kill all mosh server except last one
+alias kms='kill $(ps --no-headers --sort=start_time -C mosh-server -o pid | head -n -1)'
+
+# dump binary file head 256 byte
+alias odd='od -A x -t xz -N 256 -v'
+
+# sync
 alias rcp='rsync -avuz'
 
 # other tools
@@ -30,15 +31,20 @@ alias gd='git diff --no-index'
 alias path='echo -e ${PATH//:/\\n}'
 alias gc='git clone'
 alias cx='cd `git rev-parse --show-toplevel`'
-alias myip='curl -s http://myip.ipip.net'
+# see ifconfig.me
+alias myip='curl -s http://ifconfig.me'
+# see https://www.myip.la/
+alias mycity='curl -s http://myip.ipip.net'
 
 
-if type -P fdfind &>/dev/null; then
+# search file
+if which fdfind >/dev/null; then
 	alias fd='fdfind'
 	alias fd2='fd -d 2'
 	alias fd3='fd -d 3'
 	alias fd4='fd -d 4'
 	alias fd5='fd -d 5'
+# find file mask by gitignore and dotstart
 	alias fu='fd -uud'
 	alias fu2='fd -uud 2'
 	alias fu3='fd -uud 3'
@@ -51,7 +57,7 @@ else
 	alias fd5='find -maxdepth 5 -name'
 fi
 
-if type -P rg &>/dev/null; then
+if which rg >/dev/null; then
 	alias gg='rg -inS -e'
 	alias gw='rg -inw -e'
 	alias gf='rg -inF -e'
@@ -64,11 +70,10 @@ fi
 
 
 # dbg tools
-egdb() { emacs --eval "(gdb \"gdb --annotate=3 -i=mi $*\")"; }
-if type -P valgrid; then
+if which valgrid >/dev/null; then
 	alias vg='valgrind --leak-check=full --show-lead-kinds=all --track-origins=yes --verbose --log-file=valgrid-out.txt'
 fi
 
-if type -P tldr >/dev/null; then
+if which tldr >/dev/null; then
 	alias tf='tldr find'
 fi

@@ -23,7 +23,7 @@ max_line_length = 80
 [CMakeLists.txt]
 indent_style = space
 indent_size = 4
-max_line_length = 80
+max_line_length = 120
 [*.sh]
 indent_style = tab
 table_width = 4

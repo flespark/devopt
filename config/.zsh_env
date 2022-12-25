@@ -1,0 +1,18 @@
+export EDITOR=vim
+export PAGER=less
+export LESSCHARSET=utf-8
+
+# NOTE: relative config .bash_command
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-/root}
+export XDG_DATA_HOME=/wks/.local/share
+export XDG_CACHE_HOME=/wks/.cache
+export XDG_STAT_HOME=/wks/.local/stat
+
+# fzf config
+if which fzf >/dev/null;then
+
+if which fd >/dev/null;then
+	export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
+fi
+
+fi

@@ -17,4 +17,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 	while read pkg; do apt-get install -y "${pkg}"; done < /tmp/pkglist && \
 	while read repo_url local_path; do git clone --single-branch --depth=1 "${repo_url}" "${local_path}"; done < /tmp/repolist
 
+RUN chsh -s /bin/zsh
 # RUN xdg-user-dirs-update
