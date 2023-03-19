@@ -3,7 +3,9 @@ name: Docker build
 on:
   workflow_dispatch:
   push:
-    branches: ["kernel"]
+    branches:
+      - kernel
+      - embeded
     tags: ['v*']
 
 jobs:
@@ -22,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: registry.cn-hangzhou.aliyuncs.com/flespark/devopt
+          images: registry.cn-hangzhou.aliyuncs.com/flespark/devopt-${{ GITHUB_REF_NAME }}
           tags: type=sha
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
