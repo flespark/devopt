@@ -70,6 +70,7 @@
 	s = status -s
 	sh = show
 	sl = show HEAD
+	sn = show --name-status
 	st = status
 	ss = stash
 	sl = stash list
