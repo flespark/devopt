@@ -6,15 +6,15 @@ dependencies.
 
 ### Usage
 
-1. build it locally:
+1. build locally after clone:
 
-   `docker build -t devopt:stable .`
+   `docker build -t devopt:latest .`
 
-   or pull from docker mirror:
+   or direct pull from aliyun docker hub:
 
-   `docker pull registry.cn-hangzhou.aliyuncs.com/flespark/devopt:stable`
+   `docker pull registry.cn-hangzhou.aliyuncs.com/flespark/devopt:latest`
 
-2. start docker with local kernel source mounted:
+2. start docker with workspace mount to docker:
 
-   `docker run --privileged -v <project_path>:/wks -it devopt:stable`
+   `docker run -v <your_workspace>:/wks -it devopt:latest`
 

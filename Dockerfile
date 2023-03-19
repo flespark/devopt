@@ -19,3 +19,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 
 RUN chsh -s /bin/zsh
 # RUN xdg-user-dirs-update
+
+# NOTE: some system config move to shell init script

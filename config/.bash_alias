@@ -1,0 +1,74 @@
+# file system
+alias sl='ls'
+alias ll='ls -alF'
+alias lf='ls -d'
+alias lt='ls -hlt'
+alias la='ls -A'
+alias l='ll -h'
+alias md='mkdir -p'
+alias df='df -h'
+alias rf='readlink -f'
+# kill all mosh server except last one
+alias kms='kill $(ps --no-headers --sort=start_time -C mosh-server -o pid | head -n -1)'
+alias odd='od -A x -t xz -N 256 -v'
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+alias rcp='rsync -avuz'
+
+# other tools
+alias vi='vim'
+alias v='vim'
+alias mk='make'
+alias ta='tmux attach -t default || tmux new -s default'
+alias vd='vimdiff'
+alias lr='less -r'
+alias gd='git diff --no-index'
+alias path='echo -e ${PATH//:/\\n}'
+alias gc='git clone'
+alias cx='cd `git rev-parse --show-toplevel`'
+alias myip='curl -s http://myip.ipip.net'
+
+
+if type -P fdfind &>/dev/null; then
+	alias fd='fdfind'
+	alias fd2='fd -d 2'
+	alias fd3='fd -d 3'
+	alias fd4='fd -d 4'
+	alias fd5='fd -d 5'
+	alias fu='fd -uud'
+	alias fu2='fd -uud 2'
+	alias fu3='fd -uud 3'
+	alias fu4='fd -uud 4'
+	alias fu5='fd -uud 5'
+else
+	alias fd2='find -maxdepth 2 -name'
+	alias fd3='find -maxdepth 3 -name'
+	alias fd4='find -maxdepth 4 -name'
+	alias fd5='find -maxdepth 5 -name'
+fi
+
+if type -P rg &>/dev/null; then
+	alias gg='rg -inS -e'
+	alias gw='rg -inw -e'
+	alias gf='rg -inF -e'
+	alias gc='rg -in -tc -e'
+	alias gm='rg -in -tamake -tmake -e'
+else
+	alias gg='grep -inrI ./ -e'
+	alias gf='grep -inrIF ./ -e'
+fi
+
+
+# dbg tools
+egdb() { emacs --eval "(gdb \"gdb --annotate=3 -i=mi $*\")"; }
+if type -P valgrid; then
+	alias vg='valgrind --leak-check=full --show-lead-kinds=all --track-origins=yes --verbose --log-file=valgrid-out.txt'
+fi
+
+if type -P tldr >/dev/null; then
+	alias tf='tldr find'
+fi

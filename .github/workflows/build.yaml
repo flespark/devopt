@@ -24,8 +24,8 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: registry.cn-hangzhou.aliyuncs.com/flespark/devopt-${{ GITHUB_REF_NAME }}
-          tags: type=sha
+          images: registry.cn-hangzhou.aliyuncs.com/flespark/devopt
+          tags: type=ref,event=tag
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
